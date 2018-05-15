@@ -19,3 +19,14 @@ for subdir, dirs, files in os.walk(input_rootdir_cancer):
         new_filename = filename
         new_filename.replace('-', '_')
         shutil.copy(input_rootdir_cancer + filename, output_rootdir + 'cancer_' + new_filename)
+
+# to remove some non-gene lines from files
+for subrirs, dirs, files in os.walk(output_rootdir):
+    for file in files:
+        f = open(output_rootdir + file, 'r')
+        lines = f.readlines()
+        f.close()
+
+        w = open(output_rootdir + file, 'w')
+        w.writelines([item for item in lines[:-5]])
+        w.close()
