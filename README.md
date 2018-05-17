@@ -6,4 +6,7 @@ DATA PREPARATION
 
 DATA ANALYSIS
 1) PCA in data_analysis/PCA
-2) To decrease number of features allpy DESeq: data_analysis/DESeq
+2) To decrease number of features allpy DESeq: data_analysis/DESeq, then manually copy that genes in txt file and with data_preparation/make_input4Py.py script convert it in data/ input csv files for data prediction.
+
+DATA PREDICTION
+1) prediction/predictions.py script divide 32 normal tissue observations by 4 parts (8 obdervations in each). One of these parts and 46 varians of cancer tissue (8 observations each) is for test, other data is for train. For all theese sets of train and test data script calculates auc for these classifiers: 'penalized SVM', 'logistic regression', 'XGBoost', 'LDA', 'random forest'. Then it takes average by all sets for each classifier.
