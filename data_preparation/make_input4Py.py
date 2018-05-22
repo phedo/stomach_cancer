@@ -3,14 +3,14 @@ import os
 
 rootdir_normal = '../data/normal/'
 rootdir_cancer = '../data/cancer/'
-res_normal = open('../data/input_genes4P_normal_padj_less_0.01_threshold_4.csv', 'w')
-res_cancer = open('../data/input_genes4P_cancer_padj_less_0.01_threshold_4.csv', 'w')
+res_normal = open('../data/input_genes4P_normal_5.csv', 'w')
+res_cancer = open('../data/input_genes4P_cancer_5.csv', 'w')
 
 res_normal.write('Class')
 res_cancer.write('Class')
 
 genes = []
-file_with_genes = open('../data/sorted_genes/all_genes_with_padj_less_0.01_threshold_4.txt', 'r')
+file_with_genes = open('../data/sorted_genes/5.txt', 'r')
 j=0
 while True:
     gene_name = file_with_genes.readline()
